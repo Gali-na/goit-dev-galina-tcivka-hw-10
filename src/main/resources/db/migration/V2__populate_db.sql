@@ -1,0 +1,30 @@
+insert into client (client_name) values ('James'),
+('John'),
+('Robert'),
+('Michael'),
+('William'),
+('Mary'),
+('Jennifer'),
+('Anry'),
+('Hanna'),
+('Liza'),
+('Kacel');
+insert into planet (id,name) values ('MER','Mercury'),
+('VEN','Venus'),
+('EAR','Earth'),
+('MAR','Mars'),
+('JUP','Jupiter'),
+('SAT','Saturn'),
+('URAN','Uranus'),
+('NEP','Neptune');
+insert into ticket (created_at,client_id,from_planet_id,to_planet_id)
+values ('2000-01-01 12:00:00',1,'VEN','EAR'),
+('2000-01-01 12:01:00',2,'EAR','MAR'),
+('2000-01-01 12:02:00',3,'MAR','JUP'),
+('2000-01-01 12:04:00',5,'SAT','URAN'),
+('2000-01-01 12:05:00',6,'URAN','NEP'),
+('2000-01-01 12:06:00',7,'NEP','VEN'),
+('2000-01-01 12:07:00',8,'VEN','MAR'),
+('2000-01-01 12:08:00',9,'MAR','SAT'),
+('2000-01-01 12:09:00',10,'SAT','NEP');
+
