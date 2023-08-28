@@ -24,6 +24,7 @@ public class HibernateUtil {
                    // .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Planet.class)
+                .addAnnotatedClass(Ticket.class)
                     .buildSessionFactory();
 
     }

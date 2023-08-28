@@ -2,9 +2,14 @@ package model;
 
 import exceptions.ArgumentException;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 @Entity
-@Data
+@NoArgsConstructor
+@EqualsAndHashCode
+@Getter
 @Table(name = "client")
 public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +29,10 @@ public class Client {
         this.name = name;
     }
 
+    public void setId(long id) throws ArgumentException {
+        if (id <0) {
+            throw new ArgumentException("Argument cannot be null");
+        }
+        Id = id;
+    }
 }

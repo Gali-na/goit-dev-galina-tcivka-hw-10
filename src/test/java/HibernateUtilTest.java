@@ -1,6 +1,7 @@
 import lombok.Getter;
 import model.Client;
 import model.Planet;
+import model.Ticket;
 import org.flywaydb.core.Flyway;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -15,14 +16,13 @@ public class HibernateUtilTest {
     static {
         INSTANCE = new HibernateUtilTest();
     }
-
-
     private HibernateUtilTest() {
         flywayProject = Flyway.configure().dataSource("jdbc:h2:./db_spase_travel3_test", null, null).load();
         flywayProject.migrate();
         sessionFactory = new Configuration()
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Planet.class)
+                .addAnnotatedClass(Ticket.class)
                 .buildSessionFactory();
 
     }

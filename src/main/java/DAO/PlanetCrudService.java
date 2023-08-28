@@ -42,6 +42,7 @@ public class PlanetCrudService implements PlanetDAO {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             listAllPlanet = session.createQuery("from Planet", Planet.class).getResultList();
+            transaction.commit();
         }
         return listAllPlanet;
     }

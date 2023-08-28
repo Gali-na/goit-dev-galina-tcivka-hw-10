@@ -28,8 +28,8 @@ class PlanetCrudServiceTest {
     @Test
     void create_PlanetValid_PositiveResult() throws ArgumentException {
         Planet planet = new Planet();
-        planet.setId("NNN");
-        planet.setName("NewPlan");
+        planet.setId("NNNN");
+        planet.setName("NewPlanN");
         List<Planet> planetsBeforeCreating = planetDAO.getAll();
         planetDAO.create(planet);
         List<Planet> planetsAfterCreating = planetDAO.getAll();
@@ -40,8 +40,8 @@ class PlanetCrudServiceTest {
     @Test
     void getAll() throws ArgumentException {
         Planet planet = new Planet();
-        planet.setId("ALL");
-        planet.setName("NewPlan");
+        planet.setId("ALLN");
+        planet.setName("NewPlanNN");
         List<Planet> planetsBeforeCreating = planetDAO.getAll();
         planetDAO.create(planet);
         List<Planet> planetsAfterCreating = planetDAO.getAll();
@@ -81,11 +81,11 @@ class PlanetCrudServiceTest {
     @Test
     void deleteById_IdExisitInBd_PositiveResult() throws ArgumentException {
         Planet planet = new Planet();
-        planet.setId("DEL");
-        planet.setName("Delete");
+        planet.setId("DELN");
+        planet.setName("DeleteN");
         planetDAO.create(planet);
         int countPlanetsBeforDelet = planetDAO.getAll().size();
-        planetDAO.deleteById("DEL");
+        planetDAO.deleteById("DELN");
         int countAfterBeforDelet =planetDAO.getAll().size();
         assertEquals(countPlanetsBeforDelet, countAfterBeforDelet + 1);
     }
@@ -93,11 +93,11 @@ class PlanetCrudServiceTest {
     @Test
     void updateById_IdExisitInBd_PositiveResult() throws ArgumentException {
         Planet planet = new Planet();
-        planet.setId("NEW2");
-        planet.setName("NEWname1");
+        planet.setId("NEW2N");
+        planet.setName("NEWname1N");
         planetDAO.create(planet);
-        planetDAO.updateById("NEW2","NEWname2");
-        assertEquals(planetDAO.getById("NEW2").getName(),"NEWname2");
+        planetDAO.updateById("NEW2N","NEWname2N");
+        assertEquals(planetDAO.getById("NEW2N").getName(),"NEWname2N");
     }
     @Test
     void updateById_SetNullArgument_ThrowException() {
